@@ -1,5 +1,5 @@
-import your_proto_file_pb2
-import your_proto_file_pb2_grpc
+import file_service_pb2 as your_proto_file_pb2
+import file_service_pb2_grpc as your_proto_file_pb2_grpc
 import grpc
 
 
