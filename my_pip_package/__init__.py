@@ -8,7 +8,7 @@ def get_file(peer_ip, peer_port, filepath):
     stub = file_service_pb2_grpc.FileServiceStub(channel)
     response = stub.GetFile(
         file_service_pb2.GetFileRequest(
-            address=file_service_pb2.Address(IP=peer_ip, port=peer_port),
+            address=file_service_pb2.AddressPeer(IP=peer_ip, port=peer_port),
             file_path=filepath,
         )
     )
@@ -20,7 +20,7 @@ def set_file(peer_ip, peer_port, filepath, content):
     stub = file_service_pb2_grpc.FileServiceStub(channel)
     response = stub.SetFile(
         file_service_pb2.SetFileRequest(
-            address=file_service_pb2.Address(IP=peer_ip, port=peer_port),
+            address=file_service_pb2.AddressPeer(IP=peer_ip, port=peer_port),
             file_path=filepath,
             file_content=content,
         )
@@ -33,7 +33,7 @@ def delete_file(peer_ip, peer_port, filepath):
     stub = file_service_pb2_grpc.FileServiceStub(channel)
     response = stub.DeleteFile(
         file_service_pb2.DeleteRequest(
-            address=file_service_pb2.Address(IP=peer_ip, port=peer_port),
+            address=file_service_pb2.AddressPeer(IP=peer_ip, port=peer_port),
             file_path=filepath,
         )
     )

@@ -6,13 +6,13 @@ service FileService {
     rpc DeleteFile(DeleteRequest) returns (DeleteResponse) {}
 }
 
-message Address {
+message AddressPeer {
     string IP = 1;
     string port = 2;
 }
 
 message GetFileRequest {
-    Address address = 1;
+    AddressPeer address = 1;
     string file_path = 2;
 }
 
@@ -22,7 +22,7 @@ message GetFileResponse {
 }
 
 message SetFileRequest {
-    Address address = 1;
+    AddressPeer address = 1;
     string file_path = 2;
     bytes file_content = 3;
 }
@@ -32,7 +32,7 @@ message SetFileResponse {
 }
 
 message DeleteRequest {
-    Address address = 1;
+    AddressPeer address = 1;
     string file_path = 2;
 }
 
