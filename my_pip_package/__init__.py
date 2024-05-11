@@ -1,5 +1,5 @@
-import file_service_pb2
-import file_service_pb2_grpc
+from . import file_service_pb2
+from . import file_service_pb2_grpc
 import grpc
 
 
