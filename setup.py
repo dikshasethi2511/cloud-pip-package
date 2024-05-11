@@ -1,14 +1,16 @@
-from setuptools import setup
-
-from my_pip_package import __version__
+from setuptools import setup, find_packages
 
 setup(
-    name='my_pip_package',
-    version=__version__,
-
-    url='https://github.com/dikshasethi2511/cloud-pip-package',
-    author='Diksha Sethi',
-    author_email='diksha20056@iiitd.ac.in',
-
-    py_modules=['my_pip_package'],
+    name="my_pip_package",
+    version="0.1",
+    packages=find_packages(),
+    install_requires=[
+        "grpcio",
+    ],
+    author="Diksha Sethi",
+    author_email="diksha20056@iiitd.ac.in",
+    url="https://github.com/dikshasethi2511/cloud-pip-package",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+    ],
 )
